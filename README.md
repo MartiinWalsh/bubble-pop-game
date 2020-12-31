@@ -1,5 +1,6 @@
 ﻿# Number Guess
 Using Unity's physics engine to create a bubble popping game.
+Consisting of multiple levels, audio components and a score system.
 
 ## Learning outcomes
 - Unity's physics engine and collisions.

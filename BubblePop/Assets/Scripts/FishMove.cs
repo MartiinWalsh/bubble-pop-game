@@ -20,6 +20,5 @@ public class FishMove : MonoBehaviour
         // Set fish x positon to the mouse position (If within the screen size)
         fishPos.x = Mathf.Clamp(mousePosInUnits, minX, maxX);
         transform.position = fishPos;
-        Debug.Log(mousePosInUnits);
     }
 }

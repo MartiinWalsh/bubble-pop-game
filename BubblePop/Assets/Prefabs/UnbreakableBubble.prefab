@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7086594622205663204}
   - component: {fileID: 3425240462652798626}
   m_Layer: 0
-  m_Name: Bubble
-  m_TagString: Untagged
+  m_Name: UnbreakableBubble
+  m_TagString: Unbreakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5c1614f40e06e0a4197b4fccc6b268fe, type: 3}
-  m_Color: {r: 1, g: 0.84669596, b: 0.3443396, a: 1}
+  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf28610c08b51b84999d0cbca69658e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  breakSound: {fileID: 8300000, guid: 22a85c531918f3d40931139fff25e01f, type: 3}
+  blockParticles: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  maxHits: 0
+  timesHit: 0
 --- !u!58 &3425240462652798626
 CircleCollider2D:
   m_ObjectHideFlags: 0

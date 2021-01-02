@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class Block : MonoBehaviour
 {
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockParticles;
-    [SerializeField] int maxHits;
+    [SerializeField] Sprite[] hitSprites;
 
     // Cached reference
     Level level;
@@ -36,21 +37,39 @@ public class Block : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        HandleHit();
-
+        if (tag == "Breakable")
+        {
+            HandleHit();
+        }
     }
 
     private void HandleHit()
     {
-        if (tag == "Breakable")
-        {
-            timesHit++;
-            if (timesHit == maxHits)
-            {
-                gameStatus.AddToScore();
-                DestroyBubble();
-            }
 
+        timesHit++;
+        int maxHits = hitSprites.Length + 1;
+        if (timesHit == maxHits)
+        {
+            gameStatus.AddToScore();
+            DestroyBubble();
+        }
+        else
+        {
+            ShowNextHitSprite();
+        }
+
+    }
+
+    private void ShowNextHitSprite()
+    {
+        int spriteIndex = timesHit - 1;
+        if (hitSprites[spriteIndex] != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        }
+        else
+        {
+            Debug.LogError("Bubble sprite missing from array!" + gameObject.name);
         }
     }
 

@@ -10,15 +10,35 @@ public class FishMove : MonoBehaviour
     [SerializeField] float minX = 1f;
     [SerializeField] float maxX = 30f;
 
+    // cache ref
+    GameStatus gameStatus;
+    Ball theBall;
+
+    private void Start()
+    {
+        gameStatus = FindObjectOfType<GameStatus>();
+        theBall = FindObjectOfType<Ball>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        // Current mouse position
-        float mousePosInUnits = Input.mousePosition.x / Screen.width * screenWidthInUnits;
         // Current fish sprite position
         Vector2 fishPos = new Vector2(transform.position.x, transform.position.y);
         // Set fish x positon to the mouse position (If within the screen size)
-        fishPos.x = Mathf.Clamp(mousePosInUnits, minX, maxX);
+        fishPos.x = Mathf.Clamp(GetXPos(), minX, maxX);
         transform.position = fishPos;
+    }
+
+    private float GetXPos()
+    {
+        if (gameStatus.IsAutoPlayEnabled())
+        {
+            return theBall.transform.position.x;
+        }
+        else
+        {
+            return Input.mousePosition.x / Screen.width * screenWidthInUnits;
+        }
     }
 }

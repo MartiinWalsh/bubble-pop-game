@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 22a85c531918f3d40931139fff25e01f, type: 3}
   blockParticles: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
-  maxHits: 2
+  maxHits: 3
   timesHit: 0
 --- !u!58 &3425240462652798626
 CircleCollider2D:

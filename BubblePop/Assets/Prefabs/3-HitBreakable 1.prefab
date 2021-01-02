@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7086594622205663204}
   - component: {fileID: 3425240462652798626}
   m_Layer: 0
-  m_Name: UnbreakableBubble
-  m_TagString: Unbreakable
+  m_Name: 3-HitBreakable 1
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5c1614f40e06e0a4197b4fccc6b268fe, type: 3}
-  m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+  m_Color: {r: 1, g: 0.84669596, b: 0.3443396, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,7 +97,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 22a85c531918f3d40931139fff25e01f, type: 3}
   blockParticles: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
-  hitSprites: []
+  maxHits: 3
+  hitSprites:
+  - {fileID: 21300000, guid: c4579e7a778f77a4fbcd5e442caccc6a, type: 3}
+  - {fileID: 21300000, guid: c5dad8c210886014a8d1fa27b654a24d, type: 3}
   timesHit: 0
 --- !u!58 &3425240462652798626
 CircleCollider2D:
